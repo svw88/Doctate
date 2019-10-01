@@ -1,0 +1,509 @@
+@font-face {
+  font-family: 'clean-icons';
+  src: url('font/clean-icons.eot?17685546');
+  src: url('font/clean-icons.eot?17685546#iefix') format('embedded-opentype'), url('font/clean-icons.woff2?17685546') format('woff2'), url('font/clean-icons.woff?17685546') format('woff'), url('font/clean-icons.ttf?17685546') format('truetype'), url('font/clean-icons.svg?17685546#clean-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'clean-icons';
+    src: url('../font/clean-icons.svg?17685546#clean-icons') format('svg');
+  }
+}
+*/
+
+.ci {
+  min-height: 20px;
+  min-width: 20px;
+}
+
+[class^="ci"]:before, [class*="ci"]:before {
+  font-family: "clean-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  min-height: 20px;
+  min-width: 20px;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.ci.arrow-down:before {
+  content: '\e800';
+}
+/* '' */
+.ci.arrow-left:before {
+  content: '\e801';
+}
+/* '' */
+.ci.arrow-right:before {
+  content: '\e802';
+}
+/* '' */
+.ci.arrow-up:before {
+  content: '\e803';
+}
+/* '' */
+.ci.at-symbol:before {
+  content: '\e804';
+}
+/* '' */
+.ci.book:before {
+  content: '\e805';
+}
+/* '' */
+.ci.bookmark:before {
+  content: '\e806';
+}
+/* '' */
+.ci.briefcase:before {
+  content: '\e807';
+}
+/* '' */
+.ci.browser:before {
+  content: '\e808';
+}
+/* '' */
+.ci.building:before {
+  content: '\e809';
+}
+/* '' */
+.ci.calander:before {
+  content: '\e80a';
+}
+/* '' */
+.ci.call:before {
+  content: '\e80b';
+}
+/* '' */
+.ci.call-incoming:before {
+  content: '\e80c';
+}
+/* '' */
+.ci.call-outgoing:before {
+  content: '\e80d';
+}
+/* '' */
+.ci.camera:before {
+  content: '\e80e';
+}
+/* '' */
+.ci.cart:before {
+  content: '\e80f';
+}
+/* '' */
+.ci.chat:before {
+  content: '\e810';
+}
+/* '' */
+.ci.check-circle:before {
+  content: '\e811';
+}
+/* '' */
+.ci.cheveron-down:before {
+  content: '\e812';
+}
+/* '' */
+.ci.cheveron-left:before {
+  content: '\e813';
+}
+/* '' */
+.ci.cheveron-right:before {
+  content: '\e814';
+}
+/* '' */
+.ci.cheveron-up:before {
+  content: '\e815';
+}
+/* '' */
+.ci.clip:before {
+  content: '\e816';
+}
+/* '' */
+.ci.clipboard:before {
+  content: '\e817';
+}
+/* '' */
+.ci.clock:before {
+  content: '\e818';
+}
+/* '' */
+.ci.code:before {
+  content: '\e819';
+}
+/* '' */
+.ci.cog:before {
+  content: '\e81a';
+}
+/* '' */
+.ci.comment:before {
+  content: '\e81b';
+}
+/* '' */
+.ci.compass:before {
+  content: '\e81c';
+}
+/* '' */
+.ci.currency-dollar:before {
+  content: '\e81d';
+}
+/* '' */
+.ci.dashboard:before {
+  content: '\e81e';
+}
+/* '' */
+.ci.desktop:before {
+  content: '\e81f';
+}
+/* '' */
+.ci.discount:before {
+  content: '\e820';
+}
+/* '' */
+.ci.download:before {
+  content: '\e821';
+}
+/* '' */
+.ci.duplicate:before {
+  content: '\e822';
+}
+/* '' */
+.ci.edit:before {
+  content: '\e823';
+}
+/* '' */
+.ci.emotion-happy:before {
+  content: '\e824';
+}
+/* '' */
+.ci.emotion-sad:before {
+  content: '\e825';
+}
+/* '' */
+.ci.exclamation:before {
+  content: '\e826';
+}
+/* '' */
+.ci.external-link:before {
+  content: '\e827';
+}
+/* '' */
+.ci.file:before {
+  content: '\e828';
+}
+/* '' */
+.ci.file-blank:before {
+  content: '\e829';
+}
+/* '' */
+.ci.file-minus:before {
+  content: '\e82a';
+}
+/* '' */
+.ci.file-plus:before {
+  content: '\e82b';
+}
+/* '' */
+.ci.film:before {
+  content: '\e82c';
+}
+/* '' */
+.ci.filter:before {
+  content: '\e82d';
+}
+/* '' */
+.ci.flag:before {
+  content: '\e82e';
+}
+/* '' */
+.ci.folder:before {
+  content: '\e82f';
+}
+/* '' */
+.ci.folder-minus:before {
+  content: '\e830';
+}
+/* '' */
+.ci.folder-plus:before {
+  content: '\e831';
+}
+/* '' */
+.ci.globe:before {
+  content: '\e832';
+}
+/* '' */
+.ci.graph-bar:before {
+  content: '\e833';
+}
+/* '' */
+.ci.grid:before {
+  content: '\e834';
+}
+/* '' */
+.ci.group:before {
+  content: '\e835';
+}
+/* '' */
+.ci.hashtag:before {
+  content: '\e836';
+}
+/* '' */
+.ci.heart:before {
+  content: '\e837';
+}
+/* '' */
+.ci.help:before {
+  content: '\e838';
+}
+/* '' */
+.ci.home:before {
+  content: '\e839';
+}
+/* '' */
+.ci.image:before {
+  content: '\e83a';
+}
+/* '' */
+.ci.inbox:before {
+  content: '\e83b';
+}
+/* '' */
+.ci.information:before {
+  content: '\e83c';
+}
+/* '' */
+.ci.key:before {
+  content: '\e83d';
+}
+/* '' */
+.ci.link:before {
+  content: '\e83e';
+}
+/* '' */
+.ci.location:before {
+  content: '\e83f';
+}
+/* '' */
+.ci.lock-closed:before {
+  content: '\e840';
+}
+/* '' */
+.ci.lock-open:before {
+  content: '\e841';
+}
+/* '' */
+.ci.mail:before {
+  content: '\e842';
+}
+/* '' */
+.ci.map:before {
+  content: '\e843';
+}
+/* '' */
+.ci.menu:before {
+  content: '\e844';
+}
+/* '' */
+.ci.microphone:before {
+  content: '\e845';
+}
+/* '' */
+.ci.minus:before {
+  content: '\e846';
+}
+/* '' */
+.ci.minus-circle:before {
+  content: '\e847';
+}
+/* '' */
+.ci.minus-square:before {
+  content: '\e848';
+}
+/* '' */
+.ci.mobile:before {
+  content: '\e849';
+}
+/* '' */
+.ci.moon:before {
+  content: '\e84a';
+}
+/* '' */
+.ci.more-horiz:before {
+  content: '\e84b';
+}
+/* '' */
+.ci.music:before {
+  content: '\e84c';
+}
+/* '' */
+.ci.news:before {
+  content: '\e84d';
+}
+/* '' */
+.ci.notification:before {
+  content: '\e84e';
+}
+/* '' */
+.ci.plus:before {
+  content: '\e84f';
+}
+/* '' */
+.ci.plus-circle:before {
+  content: '\e850';
+}
+/* '' */
+.ci.plus-square:before {
+  content: '\e851';
+}
+/* '' */
+.ci.print:before {
+  content: '\e852';
+}
+/* '' */
+.ci.puzzle:before {
+  content: '\e853';
+}
+/* '' */
+.ci.refresh:before {
+  content: '\e854';
+}
+/* '' */
+.ci.repeat:before {
+  content: '\e855';
+}
+/* '' */
+.ci.rocket:before {
+  content: '\e856';
+}
+/* '' */
+.ci.search:before {
+  content: '\e857';
+}
+/* '' */
+.ci.server:before {
+  content: '\e858';
+}
+/* '' */
+.ci.speaker:before {
+  content: '\e859';
+}
+/* '' */
+.ci.star:before {
+  content: '\e85a';
+}
+/* '' */
+.ci.store:before {
+  content: '\e85b';
+}
+/* '' */
+.ci.tablet:before {
+  content: '\e85c';
+}
+/* '' */
+.ci.tag:before {
+  content: '\e85d';
+}
+/* '' */
+.ci.thumb-down:before {
+  content: '\e85e';
+}
+/* '' */
+.ci.thumb-up:before {
+  content: '\e85f';
+}
+/* '' */
+.ci.trash:before {
+  content: '\e860';
+}
+/* '' */
+.ci.trending-down:before {
+  content: '\e861';
+}
+/* '' */
+.ci.trending-up:before {
+  content: '\e862';
+}
+/* '' */
+.ci.trophy:before {
+  content: '\e863';
+}
+/* '' */
+.ci.upload:before {
+  content: '\e864';
+}
+/* '' */
+.ci.user:before {
+  content: '\e865';
+}
+/* '' */
+.ci.user-check:before {
+  content: '\e866';
+}
+/* '' */
+.ci.user-minus:before {
+  content: '\e867';
+}
+/* '' */
+.ci.user-plus:before {
+  content: '\e868';
+}
+/* '' */
+.ci.video:before {
+  content: '\e869';
+}
+/* '' */
+.ci.view:before {
+  content: '\e86a';
+}
+/* '' */
+.ci.x:before {
+  content: '\e86b';
+}
+/* '' */
+.ci.x-circle:before {
+  content: '\e86c';
+}
+/* '' */
+.ci.x-square:before {
+  content: '\e86d';
+}
+/* '' */
+.ci.zoom-in:before {
+  content: '\e86e';
+}
+/* '' */
+.ci.zoom-out:before {
+  content: '\e86f';
+}
+/* '' */
+.ci.announcement:before {
+  content: '\e870';
+}
+/* '' */
+.ci.archive:before {
+  content: '\e871';
+}
+/* '' */

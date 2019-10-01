@@ -1,0 +1,47 @@
+<div class="bg-white w-8/12 m-auto mt-16 shadow-xl p-10 rounded-lg">
+  <div class="inline-block text-2xl font-bold w-5/6 sm:pl-20 lg:pl-40 text-center mb-5">
+    Documents
+  </div>
+  <div class="inline-block w-1/6 text-right mb-5">
+    <button class="rounded bg-green-400 text-green-900 mx-2 text-2xl"><i class="ci plus"></i></button>
+    <button class="rounded bg-indigo-400 text-green-900 mx-2 text-2xl"><i class="ci cog"></i></button>
+  </div>
+  <div style="max-height: 360px" class="overflow-y-scroll border">
+    <table class="table-auto w-full" >
+      <thead>
+        <tr>
+          <th class="p-4 w-1/4 border shadow sticky top-0 bg-white">
+            Name
+          </th>
+          <th class="p-4 w-1/4 border shadow sticky top-0 bg-white">
+            Date Created
+          </th>
+          <th class="p-4 w-1/4 border shadow sticky top-0 bg-white">
+            Date Updated
+          </th>
+          <th class="p-4 w-1/4 border shadow sticky top-0 bg-white">
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let document of documentList">
+          <td class="p-4 w-1/4 border">
+            {{document.name}}
+          </td>
+          <td class="p-4 w-1/4 border">
+            {{document.dateCreated}}
+          </td>
+          <td class="p-4 w-1/4 border">
+            {{document.dateUpdated}}
+          </td>
+          <td class="p-4 w-1/4 border text-center">
+            <button class="rounded bg-teal-400 text-green-900 sm:my-2 mx-2"><i class="ci edit"></i></button>
+            <button class="rounded bg-yellow-500 text-green-900 sm:my-2 mx-2"><i class="ci print"></i></button>
+            <button class="rounded bg-red-500 text-green-900 sm:my-2 mx-2"><i class="ci minus"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
