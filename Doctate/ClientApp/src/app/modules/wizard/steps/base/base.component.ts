@@ -6,7 +6,7 @@ import { FormGroup } from '@angular/forms';
 
 })
 export class BaseComponent {
-  form: FormGroup;
+  public form: FormGroup;
   @Input() index: number;
 
   constructor(public wizardService: WizardService, form: FormGroup, name: string) {

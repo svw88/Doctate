@@ -31,7 +31,7 @@ export class DocsComponent implements OnInit {
     } else {
       this.modalService.open('newDoc');
     }
-   
+
   }
 
   ngOnInit(): void {
@@ -39,11 +39,18 @@ export class DocsComponent implements OnInit {
   }
 
   closeModal() {
-    this.httpClient.get("api/DocumentData/CreateDocument?name=" + this.bodyText ).subscribe(() => {
+    this.httpClient.get("api/DocumentData/CreateDocument?name=" + this.bodyText).subscribe(() => {
       this.modalService.close('newDoc');
       this.router.navigate(['wizard', this.bodyText]);
       this.bodyText = '';
     });
-   
+
+  }
+
+
+  deleteDocument(name: string) {
+    this.httpClient.get(`api/DocumentData/DeleteDocument?name=${name}`).subscribe(() => {
+      this.documentList.splice(this.documentList.findIndex(x => x.Name == name), 1);
+    });
   }
 }

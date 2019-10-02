@@ -1,10 +1,10 @@
 <div class="bg-white w-8/12 m-auto mt-16 shadow-xl p-10 rounded-lg max-w-4xl">
   <ol class="max-w-4xl m-auto">
-    <li [ngClass]="{'current': wizardService.currentStep == 1}">Server</li>
-    <li [ngClass]="{'current': wizardService.currentStep == 2}">OS</li>
-    <li [ngClass]="{'current': wizardService.currentStep == 3}">Software</li>
-    <li [ngClass]="{'current': wizardService.currentStep == 4}">System</li>
-    <li [ngClass]="{'current': wizardService.currentStep == 5}">Troubleshooting</li>
+    <li (click)="stepTo(1)" [ngClass]="{'current': wizardService.currentStep == 1}">Server</li>
+    <li (click)="stepTo(2)" [ngClass]="{'current': wizardService.currentStep == 2}">OS</li>
+    <li (click)="stepTo(3)" [ngClass]="{'current': wizardService.currentStep == 3}">Software</li>
+    <li (click)="stepTo(4)" [ngClass]="{'current': wizardService.currentStep == 4}">System</li>
+    <li (click)="stepTo(5)" [ngClass]="{'current': wizardService.currentStep == 5}">Troubleshooting</li>
   </ol>
   <div class="mt-12 max-w-3xl m-auto" style="min-height: 300px">
     <app-step-server [index]="1" [hidden]="wizardService.currentStep != 1"></app-step-server>

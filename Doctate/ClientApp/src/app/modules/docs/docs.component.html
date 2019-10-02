@@ -26,18 +26,18 @@
       <tbody>
         <tr *ngFor="let document of documentList">
           <td class="p-4 w-1/4 border">
-            {{document.name}}
-          </td>
-          <td class="p-4 w-1/4 border">
-            {{document.dateCreated}}
-          </td>
-          <td class="p-4 w-1/4 border">
-            {{document.dateUpdated}}
+            {{document.Name}}
           </td>
           <td class="p-4 w-1/4 border text-center">
-            <button (click)="editDocument(document.name)" class="rounded bg-teal-400 text-green-900 sm:my-2 mx-2"><i class="ci edit"></i></button>
+            {{document.DateCreated | date:'yyyy/MM/dd'}}
+          </td>
+          <td class="p-4 w-1/4 border text-center">
+            {{document.DateUpdated | date:'yyyy/MM/dd'}}
+          </td>
+          <td class="p-4 w-1/4 border text-center">
+            <button (click)="editDocument(document.Name)" class="rounded bg-teal-400 text-green-900 sm:my-2 mx-2"><i class="ci edit"></i></button>
             <button class="rounded bg-yellow-500 text-green-900 sm:my-2 mx-2"><i class="ci print"></i></button>
-            <button class="rounded bg-red-500 text-green-900 sm:my-2 mx-2"><i class="ci minus"></i></button>
+            <button (click)="deleteDocument(document.Name)" class="rounded bg-red-500 text-green-900 sm:my-2 mx-2"><i class="ci minus"></i></button>
           </td>
         </tr>
       </tbody>

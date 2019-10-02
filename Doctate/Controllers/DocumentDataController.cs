@@ -75,12 +75,29 @@ namespace Test.Controllers
         public ActionResult<Document> GetDocument([FromQuery]string name)
         {
 
-            if (System.IO.File.Exists($"{name}.json"))
+            if (System.IO.File.Exists($"{DirectoryPath}\\{name}.json"))
             {
-
-                var result = JsonConvert.DeserializeObject<Document>(System.IO.File.ReadAllText($"{name}.json"));
+                var result = JsonConvert.DeserializeObject<Document>(System.IO.File.ReadAllText($"{DirectoryPath}\\{name}.json"));
 
                 return Ok(result);
+            }
+            else
+            {
+                return new ContentResult { StatusCode = 409, Content = "File Not Found", ContentType = "text/plain" };
+            }
+
+
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult DeleteDocument([FromQuery]string name)
+        {
+
+            if (System.IO.File.Exists($"{DirectoryPath}\\{name}.json"))
+            {
+                System.IO.File.Delete($"{DirectoryPath}\\{name}.json");
+
+                return Ok();
             }
             else
             {

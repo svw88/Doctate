@@ -16,6 +16,7 @@ import { ServerComponent } from '@app/modules/wizard/steps/server/server.compone
 import { SoftwareComponent } from '@app/modules/wizard/steps/software/software.component';
 import { ModalModule } from '@app/common/modal/modal.module';
 import { CoreModule } from '@app/core/core.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CoreModule } from '@app/core/core.module';
     HttpClientModule,
     ReactiveFormsModule,
     ModalModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [WizardService],
   bootstrap: [AppComponent]
