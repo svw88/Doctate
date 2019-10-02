@@ -1,8 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoaderComponent } from './loader/loader.component';
+import { ExceptionInterceptor } from '@app/core/exceptions/exceptions.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,10 @@ import { LoaderComponent } from './loader/loader.component';
     NavbarComponent,
     LoaderComponent
   ],
-  providers: []
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: ExceptionInterceptor,
+    multi: true
+  },]
 })
 export class CoreModule { }

@@ -51,6 +51,10 @@
   </Target>
   <ItemGroup>
     <None Remove="ClientApp\src\app\app.routing.ts" />
+    <None Remove="ClientApp\src\app\common\modal\modal.component.ts" />
+    <None Remove="ClientApp\src\app\common\modal\modal.module.ts" />
+    <None Remove="ClientApp\src\app\common\modal\modal.service.ts" />
+    <None Remove="ClientApp\src\app\core\exceptions\exceptions.interceptor.ts" />
     <None Remove="ClientApp\src\app\core\loader\loader.component.ts" />
     <None Remove="ClientApp\src\app\core\navbar\app.module.ts" />
     <None Remove="ClientApp\src\app\core\navbar\navbar.component.ts" />
@@ -58,6 +62,7 @@
     <None Remove="ClientApp\src\app\modules\about\about.component.ts" />
     <None Remove="ClientApp\src\app\modules\docs\docs.component.ts" />
     <None Remove="ClientApp\src\app\modules\home\home.component.ts" />
+    <None Remove="ClientApp\src\app\modules\wizard\interfaces\document.interface.ts" />
     <None Remove="ClientApp\src\app\modules\wizard\interfaces\service-form.interface.ts" />
     <None Remove="ClientApp\src\app\modules\wizard\steps\base\base.component.ts" />
     <None Remove="ClientApp\src\app\modules\wizard\steps\os\os.component.ts" />

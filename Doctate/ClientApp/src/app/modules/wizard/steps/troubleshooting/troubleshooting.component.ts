@@ -11,12 +11,9 @@ export class TroubleshootingComponent extends BaseComponent {
 
 
   constructor(wizardService: WizardService) {
-    super(wizardService);
-    this.form = new FormGroup({
-      troubleshooting: new FormControl('')
-    })
-
-    this.wizardService.addStep(this.formSubject, "troubleshooting");
+    super(wizardService, new FormGroup({
+      debugging: new FormControl('')
+    }), "troubleshooting");
   }
 
 

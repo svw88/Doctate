@@ -8,26 +8,25 @@ import { FormGroup } from '@angular/forms';
 })
 export class WizardService {
 
-  private steps: ServiceForm[] = [];
+  public steps: ServiceForm[] = [];
 
   public currentStep: number;
 
-  private navigate: EventEmitter<number> = new EventEmitter<number>();
+  public navigate: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() {
     this.navigate.subscribe(x => this.currentStep = x);
   }
 
-  public addStep(formSubject: BehaviorSubject<FormGroup>, name: string) {
-    this.steps.push({ Name: name, Subject: formSubject })
+  public addStep(form: FormGroup, name: string) {
+    this.steps.push({ Name: name, Form: form })
   }
 
-  public stepSubject(name: string): BehaviorSubject<FormGroup> {
-    return this.steps.find(x => x.Name == name).Subject;
-  }
 
   public navigateTo(index: number) {
     this.navigate.emit(index);
   }
+
+
 
 }

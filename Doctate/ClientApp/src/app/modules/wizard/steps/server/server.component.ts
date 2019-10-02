@@ -11,14 +11,11 @@ export class ServerComponent extends BaseComponent {
 
 
   constructor(wizardService: WizardService) {
-    super(wizardService);
-    this.form = new FormGroup({
+    super(wizardService, new FormGroup({
       cpu: new FormControl(''),
       memory: new FormControl(''),
       disk: new FormControl('')
-    })
-
-    this.wizardService.addStep(this.formSubject, "server");
+    }), "server");
   }
 
 

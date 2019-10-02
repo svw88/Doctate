@@ -11,12 +11,10 @@ export class SoftwareComponent extends BaseComponent {
 
 
   constructor(wizardService: WizardService) {
-    super(wizardService);
-    this.form = new FormGroup({
-      software: new FormControl([])
-    })
+    super(wizardService, new FormGroup({
+      software: new FormControl('')
+    }), "software");
 
-    this.wizardService.addStep(this.formSubject, "software");
   }
 
 

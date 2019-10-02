@@ -1,10 +1,9 @@
-<div class="bg-white w-8/12 m-auto mt-16 shadow-xl p-10 rounded-lg">
+<div class="bg-white w-8/12 m-auto mt-16 shadow-xl p-10 rounded-lg max-w-4xl">
   <div class="inline-block text-2xl font-bold w-5/6 sm:pl-20 lg:pl-40 text-center mb-5">
     Documents
   </div>
   <div class="inline-block w-1/6 text-right mb-5">
-    <button (click)="editDocument('new')" class="rounded bg-green-400 text-green-900 mx-2 text-2xl"><i class="ci plus"></i></button>
-    <button class="rounded bg-indigo-400 text-green-900 mx-2 text-2xl"><i class="ci cog"></i></button>
+    <button (click)="editDocument()" class="rounded bg-green-400 text-green-900 mx-2 text-2xl"><i class="ci plus"></i></button>
   </div>
   <div style="max-height: 360px" class="overflow-y-scroll border">
     <table class="table-auto w-full" >
@@ -45,3 +44,9 @@
     </table>
   </div>
 </div>
+
+<app-modal id="newDoc" class="text-center">
+  <h1>Document Name</h1>
+  <input class="text-green-700 border-b-2 my-5 px-2 outline-none w-full" type="text" [(ngModel)]="bodyText" />
+  <button  class="rounded bg-green-400 text-green-900 p-2 w-full" (click)="closeModal('newDoc');">Create</button>
+</app-modal>

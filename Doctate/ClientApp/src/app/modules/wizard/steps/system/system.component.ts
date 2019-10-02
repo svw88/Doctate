@@ -11,12 +11,9 @@ export class SystemComponent extends BaseComponent {
 
 
   constructor(wizardService: WizardService) {
-    super(wizardService);
-    this.form = new FormGroup({
-      instructions: new FormControl([])
-    })
-
-    this.wizardService.addStep(this.formSubject, "system");
+    super(wizardService, new FormGroup({
+      instructions: new FormControl('')
+    }), "system");  
   }
 
 
