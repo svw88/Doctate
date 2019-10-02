@@ -2,9 +2,6 @@ import { Component, Input } from '@angular/core';
 import { WizardService } from '@app/modules/wizard/services/wizard.service';
 import { FormGroup } from '@angular/forms';
 
-@Component({
-
-})
 export class BaseComponent {
   public form: FormGroup;
   @Input() index: number;

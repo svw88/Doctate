@@ -17,7 +17,6 @@ import { SoftwareComponent } from '@app/modules/wizard/steps/software/software.c
 import { ModalModule } from '@app/common/modal/modal.module';
 import { CoreModule } from '@app/core/core.module';
 import { CommonModule } from '@angular/common';
-import { BaseComponent } from '@app/modules/wizard/steps/base/base.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +29,7 @@ import { BaseComponent } from '@app/modules/wizard/steps/base/base.component';
     TroubleshootingComponent,
     SystemComponent,
     ServerComponent,
-    SoftwareComponent,
-    BaseComponent
+    SoftwareComponent
   ],
   imports: [
     BrowserModule,
