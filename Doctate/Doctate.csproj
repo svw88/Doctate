@@ -58,6 +58,19 @@
     <None Remove="ClientApp\src\app\modules\about\about.component.ts" />
     <None Remove="ClientApp\src\app\modules\docs\docs.component.ts" />
     <None Remove="ClientApp\src\app\modules\home\home.component.ts" />
+    <None Remove="ClientApp\src\app\modules\wizard\interfaces\service-form.interface.ts" />
+    <None Remove="ClientApp\src\app\modules\wizard\steps\base\base.component.ts" />
+    <None Remove="ClientApp\src\app\modules\wizard\steps\os\os.component.ts" />
+    <None Remove="ClientApp\src\app\modules\wizard\steps\server\server.component.ts" />
+    <None Remove="ClientApp\src\app\modules\wizard\services\wizard.service.ts" />
+    <None Remove="ClientApp\src\app\modules\wizard\steps\software\software.component.ts" />
+    <None Remove="ClientApp\src\app\modules\wizard\steps\system\system.component.ts" />
+    <None Remove="ClientApp\src\app\modules\wizard\steps\troubleshooting\troubleshooting.component.ts" />
+    <None Remove="ClientApp\src\app\modules\wizard\wizard.component.ts" />
+    <None Remove="ClientApp\tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientApp\tsconfig.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="electron.manifest.json">

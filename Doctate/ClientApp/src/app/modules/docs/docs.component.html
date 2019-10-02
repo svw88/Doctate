@@ -3,7 +3,7 @@
     Documents
   </div>
   <div class="inline-block w-1/6 text-right mb-5">
-    <button class="rounded bg-green-400 text-green-900 mx-2 text-2xl"><i class="ci plus"></i></button>
+    <button (click)="editDocument('new')" class="rounded bg-green-400 text-green-900 mx-2 text-2xl"><i class="ci plus"></i></button>
     <button class="rounded bg-indigo-400 text-green-900 mx-2 text-2xl"><i class="ci cog"></i></button>
   </div>
   <div style="max-height: 360px" class="overflow-y-scroll border">
@@ -36,7 +36,7 @@
             {{document.dateUpdated}}
           </td>
           <td class="p-4 w-1/4 border text-center">
-            <button class="rounded bg-teal-400 text-green-900 sm:my-2 mx-2"><i class="ci edit"></i></button>
+            <button (click)="editDocument(document.name)" class="rounded bg-teal-400 text-green-900 sm:my-2 mx-2"><i class="ci edit"></i></button>
             <button class="rounded bg-yellow-500 text-green-900 sm:my-2 mx-2"><i class="ci print"></i></button>
             <button class="rounded bg-red-500 text-green-900 sm:my-2 mx-2"><i class="ci minus"></i></button>
           </td>

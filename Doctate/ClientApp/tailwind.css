@@ -6,3 +6,62 @@
 
 @tailwind utilities;
 
+ol {
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  counter-reset: wizard;
+}
+
+li {
+  position: relative;
+  float: left;
+  width: 25%;
+  text-align: center;
+  color: #38a169;
+}
+
+.current ~ li {
+  color: #38a169;
+}
+
+li:before {
+  counter-increment: wizard;
+  content: counter(wizard);
+  display: block;
+  color: white;
+  background-color: #38a169;
+  border: 2px solid #38a169;
+  text-align: center;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  border-radius: 2em;
+  position: relative;
+  left: 50%;
+  margin-bottom: 1em;
+  margin-left: -1em;
+  z-index: 1;
+}
+
+.current ~ li:before {
+  background-color: white;
+  color: #38a169;
+  border-color: #38a169;
+}
+
+li + li:after {
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: #38a169;
+  height: 2px;
+  position: absolute;
+  left: -50%;
+  top: 1em;
+  z-index: 0;
+}
+
+.current ~ li:after {
+  background-color: #38a169;
+}

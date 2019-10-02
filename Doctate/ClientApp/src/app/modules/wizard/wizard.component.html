@@ -1,0 +1,21 @@
+<div class="bg-white w-8/12 m-auto mt-16 shadow-xl p-10 rounded-lg">
+  <ol>
+    <li [ngClass]="{'current': wizardService.currentStep == 1}">Server</li>
+    <li [ngClass]="{'current': wizardService.currentStep == 2}">OS</li>
+    <li [ngClass]="{'current': wizardService.currentStep == 3}">Software</li>
+    <li [ngClass]="{'current': wizardService.currentStep == 4}">System</li>
+    <li [ngClass]="{'current': wizardService.currentStep == 5}">Troubleshooting</li>
+  </ol>
+  <div class="my-10 px-16" style="min-height: 300px">
+    <app-step-server [hidden]="wizardService.currentStep != 1"></app-step-server>
+    <app-step-os [hidden]="wizardService.currentStep != 2"></app-step-os>
+    <app-step-software [hidden]="wizardService.currentStep != 3"></app-step-software>
+    <app-step-system [hidden]="wizardService.currentStep != 4"></app-step-system>
+    <app-step-troubleshooting [hidden]="wizardService.currentStep != 5"></app-step-troubleshooting>
+  </div>
+  <div class="p-4 w-full text-center">
+    <button (click)="step(-1)" class="rounded text-2xl bg-teal-400 text-green-900 sm:my-2 mx-2"><i class="ci arrow-left"></i></button>
+    <button (click)="save()" class="rounded text-2xl bg-yellow-500 text-green-900 sm:my-2 mx-2"><i class="ci briefcase"></i></button>
+    <button (click)="step(1)" class="rounded text-2xl bg-red-500 text-green-900 sm:my-2 mx-2"><i class="ci arrow-right"></i></button>
+  </div>
+</div>
