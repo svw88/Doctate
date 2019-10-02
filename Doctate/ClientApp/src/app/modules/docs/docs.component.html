@@ -36,7 +36,7 @@
           </td>
           <td class="p-4 w-1/4 border text-center">
             <button (click)="editDocument(document.Name)" class="rounded bg-teal-400 text-green-900 sm:my-2 mx-2"><i class="ci edit"></i></button>
-            <button class="rounded bg-yellow-500 text-green-900 sm:my-2 mx-2"><i class="ci print"></i></button>
+            <button (click)="print(document.Name)" class="rounded bg-yellow-500 text-green-900 sm:my-2 mx-2"><i class="ci print"></i></button>
             <button (click)="deleteDocument(document.Name)" class="rounded bg-red-500 text-green-900 sm:my-2 mx-2"><i class="ci minus"></i></button>
           </td>
         </tr>
