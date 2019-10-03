@@ -76,9 +76,9 @@ namespace Doctate
 
             options.AutoHideMenuBar = true;
             options.Width = 1280;
-            options.Height = 720;
+            options.Height = 800;
             options.MinWidth = 1280;
-            options.MinHeight = 720;
+            options.MinHeight = 800;
 
             Task.Run(async () => await Electron.WindowManager.CreateWindowAsync(options));
         }
