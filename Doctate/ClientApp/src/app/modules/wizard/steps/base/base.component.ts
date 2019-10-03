@@ -1,6 +1,6 @@
 import { Input } from '@angular/core';
 import { WizardService } from '@app/modules/wizard/services/wizard.service';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, AbstractControl, FormArray } from '@angular/forms';
 
 export class BaseComponent {
   public form: FormGroup;
@@ -15,6 +15,10 @@ export class BaseComponent {
     }
 
 
+  }
+
+  public getControls(formArray: AbstractControl) {
+    return (formArray as FormArray).controls;
   }
 
 }

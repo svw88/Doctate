@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormArray } from '@angular/forms';
+import { FormBuilder, FormArray, AbstractControl } from '@angular/forms';
 import { BaseComponent } from '@app/modules/wizard/steps/base/base.component';
 import { WizardService } from '@app/modules/wizard/services/wizard.service';
 
@@ -22,25 +22,25 @@ export class OsComponent extends BaseComponent {
 
   }
 
-  addFeature(features: FormArray) {
+  addFeature(features: AbstractControl) {
 
-    features.push(this.formbuilder.group({
+    (features as FormArray).push(this.formbuilder.group({
       mainFeature: '',
       subFeatures: this.formbuilder.array([
       ])
     }));
   }
 
-  addSubFeature(features: FormArray) {
+  addSubFeature(features: AbstractControl) {
 
-    features.push(this.formbuilder.group({
+    (features as FormArray).push(this.formbuilder.group({
       subFeature: ''
     }));
   }
 
-  removeFeature(features: FormArray, index: number) {
+  removeFeature(features: AbstractControl, index: number) {
 
-    features.removeAt(index);
+    (features as FormArray).removeAt(index);
   }
 
 }

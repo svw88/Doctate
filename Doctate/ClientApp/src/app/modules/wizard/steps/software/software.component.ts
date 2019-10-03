@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormArray } from '@angular/forms';
+import { FormBuilder, FormArray, AbstractControl } from '@angular/forms';
 import { BaseComponent } from '@app/modules/wizard/steps/base/base.component';
 import { WizardService } from '@app/modules/wizard/services/wizard.service';
 
@@ -19,16 +19,16 @@ export class SoftwareComponent extends BaseComponent {
 
   }
 
-  addSoftware(software: FormArray) {
-
-    software.push(this.formbuilder.group({
+  addSoftware(software: AbstractControl) {
+    
+    (software as FormArray).push(this.formbuilder.group({
       software: ''
     }));
   }
 
-  removeFeature(software: FormArray, index: number) {
+  removeFeature(software: AbstractControl, index: number) {
 
-    software.removeAt(index);
+    (software as FormArray).removeAt(index);
   }
 
 

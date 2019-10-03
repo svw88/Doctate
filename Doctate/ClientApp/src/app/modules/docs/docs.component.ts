@@ -6,7 +6,6 @@ import { ModalService } from '@app/common/modal/modal.service';
 import * as jspdf from 'jspdf';
 import * as html2canvas from 'html2canvas';
 import { DocumentObject } from '@app/modules/wizard/interfaces/document.interface';
-import { join } from 'path';
 
 @Component({
   templateUrl: './docs.component.html'

@@ -14,7 +14,7 @@
       </label>
     </div>
     <div class="inline-block w-9/12 overflow-y-auto text-center" style="max-height: 230px" formArrayName="features">
-      <div *ngFor="let feature of form.get('features').controls; let i = index;">
+      <div *ngFor="let feature of getControls(form.get('features')); let i = index;">
         <div class="mb-2" [formGroupName]="i">
           <input class="text-green-700 border-2 w-10/12 px-2 outline-none" type="text" rows="10" formControlName="mainFeature" />
           <button (click)="removeFeature(form.get('features'), i)" class="rounded bg-red-400 text-green-900">
@@ -25,7 +25,7 @@
           </button>
           <div class="inline-block w-1/12"></div>
           <div class="inline-block w-10/12 text-center" formArrayName="subFeatures">
-            <div *ngFor="let subfeature of feature.get('subFeatures').controls; let o = index;">
+            <div *ngFor="let subfeature of getControls(feature.get('subFeatures')); let o = index;">
               <div [formGroupName]="o">
                 <input class="text-green-700 border-2 px-2 outline-none w-10/12" type="text" rows="10" formControlName="subFeature" />
                 <button (click)="removeFeature(feature.get('subFeatures'), o)" class="rounded bg-red-400 text-green-900">

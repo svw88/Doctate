@@ -6,7 +6,7 @@
       </label>
     </div>
     <div class="inline-block w-9/12 overflow-y-auto text-center" style="max-height: 230px" formArrayName="software">
-      <div *ngFor="let feature of form.get('software').controls; let i = index;">
+      <div *ngFor="let feature of getControls(form.get('software')); let i = index;">
         <div class="mb-2" [formGroupName]="i">
           <input class="text-green-700 border-2 w-10/12 px-2 outline-none" type="text" rows="10" formControlName="software" />
           <button (click)="removeFeature(form.get('software'), i)" class="rounded bg-red-400 text-green-900">
