@@ -1,4 +1,4 @@
-<div class="bg-white w-8/12 m-auto mt-16 shadow-xl p-10 rounded-lg max-w-4xl">
+<div class="bg-white w-8/12 m-auto mt-16 shadow-xl p-10 pb-0 rounded-lg max-w-4xl">
   <ol class="max-w-4xl m-auto">
     <li (click)="stepTo(1)" [ngClass]="{'current': wizardService.currentStep == 1}">Server</li>
     <li (click)="stepTo(2)" [ngClass]="{'current': wizardService.currentStep == 2}">OS</li>
@@ -16,6 +16,7 @@
   <div class="p-4 w-full text-center">
     <button (click)="step(-1)" class="rounded text-2xl bg-teal-400 text-green-900 sm:my-2 mx-2"><i class="ci arrow-left"></i></button>
     <button (click)="save()" class="rounded text-2xl bg-yellow-500 text-green-900 sm:my-2 mx-2"><i class="ci briefcase"></i></button>
-    <button (click)="step(1)" class="rounded text-2xl bg-red-500 text-green-900 sm:my-2 mx-2"><i class="ci arrow-right"></i></button>
+    <button (click)="close()" class="rounded text-2xl bg-red-500 text-green-900 sm:my-2 mx-2"><i class="ci x-square"></i></button>
+    <button (click)="step(1)" class="rounded text-2xl bg-teal-500 text-green-900 sm:my-2 mx-2"><i class="ci arrow-right"></i></button>
   </div>
 </div>

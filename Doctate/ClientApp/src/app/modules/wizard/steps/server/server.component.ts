@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { BaseComponent } from '@app/modules/wizard/steps/base/base.component';
 import { WizardService } from '@app/modules/wizard/services/wizard.service';
 
@@ -10,11 +10,12 @@ import { WizardService } from '@app/modules/wizard/services/wizard.service';
 export class ServerComponent extends BaseComponent {
 
 
-  constructor(wizardService: WizardService) {
-    super(wizardService, new FormGroup({
-      cpu: new FormControl(''),
-      memory: new FormControl(''),
-      disk: new FormControl('')
+  constructor(wizardService: WizardService, formbuilder: FormBuilder) {
+    super(wizardService, formbuilder.group({
+      type: '',
+      cpu: '',
+      memory: '',
+      disk: ''
     }), "server");
   }
 

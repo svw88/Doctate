@@ -1,3 +1,4 @@
+using Doctate.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System;
@@ -23,12 +24,12 @@ namespace Test.Controllers
         }
 
         [HttpGet("[action]")]
-        public IEnumerable<DocumentInfo> DocumentList()
+        public IEnumerable<DocumentInfoModel> DocumentList()
         {
 
             var files = Directory.GetFiles(DirectoryPath).Where(x => x.Split('.').Last() == "json");
             var fileInfo = files.Select(x => new FileInfo(x));
-            return fileInfo.Select(file => new DocumentInfo
+            return fileInfo.Select(file => new DocumentInfoModel
             {
                 Name = file.Name.Replace($"{file.Extension}",""),
                 DateCreated = file.CreationTime,
@@ -53,7 +54,7 @@ namespace Test.Controllers
         }
 
         [HttpPost("[action]")]
-        public IActionResult UpdateDocument([FromQuery]string name, [FromBody]Document document)
+        public IActionResult UpdateDocument([FromQuery]string name, [FromBody]DocumentModel document)
         {
 
             if (System.IO.File.Exists($"{DirectoryPath}\\{name}.json"))
@@ -72,12 +73,12 @@ namespace Test.Controllers
         }
 
         [HttpGet("[action]")]
-        public ActionResult<Document> GetDocument([FromQuery]string name)
+        public ActionResult<DocumentModel> GetDocument([FromQuery]string name)
         {
 
             if (System.IO.File.Exists($"{DirectoryPath}\\{name}.json"))
             {
-                var result = JsonConvert.DeserializeObject<Document>(System.IO.File.ReadAllText($"{DirectoryPath}\\{name}.json"));
+                var result = JsonConvert.DeserializeObject<DocumentModel>(System.IO.File.ReadAllText($"{DirectoryPath}\\{name}.json"));
 
                 return Ok(result);
             }
@@ -108,26 +109,5 @@ namespace Test.Controllers
         }
 
     }
-
-    public class DocumentInfo
-    {
-        public string Name { get; set; }
-        public DateTime DateCreated { get; set; }
-        public DateTime DateUpdated { get; set; }
-    }
-
-    public class Document
-    {
-        public string OperatingSystem { get; set; }
-        public string Features { get; set; }
-        public string Cpu { get; set; }
-        public string Memory { get; set; }
-        public string Disk { get; set; }
-        public string Software { get; set; }
-        public string Instructions { get; set; }
-        public string Debugging { get; set; }
-
-    }
-
 
 }

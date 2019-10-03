@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Input } from '@angular/core';
 import { WizardService } from '@app/modules/wizard/services/wizard.service';
 import { FormGroup } from '@angular/forms';
 
@@ -14,7 +14,7 @@ export class BaseComponent {
       this.form = form;
     }
 
-   
+
   }
 
 }

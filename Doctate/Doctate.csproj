@@ -63,7 +63,9 @@
     <None Remove="ClientApp\src\app\modules\docs\docs.component.ts" />
     <None Remove="ClientApp\src\app\modules\home\home.component.ts" />
     <None Remove="ClientApp\src\app\modules\wizard\interfaces\document.interface.ts" />
+    <None Remove="ClientApp\src\app\modules\wizard\interfaces\feature.interface.ts" />
     <None Remove="ClientApp\src\app\modules\wizard\interfaces\service-form.interface.ts" />
+    <None Remove="ClientApp\src\app\modules\wizard\interfaces\software.interface.ts" />
     <None Remove="ClientApp\src\app\modules\wizard\steps\base\base.component.ts" />
     <None Remove="ClientApp\src\app\modules\wizard\steps\os\os.component.ts" />
     <None Remove="ClientApp\src\app\modules\wizard\steps\server\server.component.ts" />

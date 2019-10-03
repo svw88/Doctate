@@ -6,6 +6,7 @@ import { ModalService } from '@app/common/modal/modal.service';
 import * as jspdf from 'jspdf';
 import * as html2canvas from 'html2canvas';
 import { DocumentObject } from '@app/modules/wizard/interfaces/document.interface';
+import { join } from 'path';
 
 @Component({
   templateUrl: './docs.component.html'
@@ -68,29 +69,46 @@ export class DocsComponent implements OnInit {
                       <b>${name}</b>
                       </br>
                       </br>
-                      <b>Cpu</b>
-                      <p style="max-width: 700px;word-break: break-all;">${x.Cpu}</p>
+                      <div>
+                        <div style="display: inline-block; width: 25%;">
+                          <b>Type</b>
+                          <p style="max-width: 600px;word-break: break-all;">${x.Type}</p>
+                          </div>
+                          <div style="display: inline-block; width: 25%;">
+                          <b>Cpu</b>
+                          <p style="max-width: 600px;word-break: break-all;">${x.Cpu}</p>
+                        </div>
+                      </div>
                       </br>
-                      <b>Memory</b>
-                      <p style="max-width: 700px;word-break: break-all;">${x.Memory}</p>
-                      </br>
-                      <b>Disk</b>
-                      <p style="max-width: 700px;word-break: break-all;">${x.Disk}</p>
+                      <div>
+                        <div style="display: inline-block; width: 25%;">
+                        <b>Memory</b>
+                        <p style="max-width: 600px;word-break: break-all;">${x.Memory}</p>
+                        </div>
+                        <div style="display: inline-block; width: 25%;">
+                        <b>Disk</b>
+                        <p style="max-width: 600px;word-break: break-all;">${x.Disk}</p>
+                        </div>
+                      </div>
                       </br>
                       <b>Operating System</b>
-                      <p style="max-width: 700px;word-break: break-all;">${x.OperatingSystem}</p>
+                      <p style="max-width: 600px;word-break: break-all;">${x.OperatingSystem}</p>
                       </br>
                       <b>Features</b>
-                      <p style="max-width: 700px;word-break: break-all;">${x.Features}</p>
+                      ${x.Features.map(a => `
+                        <p style="max-width: 600px;word-break: break-all;">[${a.Feature}]: ${a.SubFeatures.map(s => ` ${s.Feature}`).join(',')}</p>       
+                      `).join('')}
                       </br>
                       <b>Software</b>
-                      <p style="max-width: 700px;word-break: break-all;">${x.Software}</p>
+                      <p style="max-width: 600px;word-break: break-all;">
+                        ${x.Software.map(s => s.Software).join(', ')}
+                      </p>
                       </br>
                       <b>Instructions</b>
-                      <p style="max-width: 700px;word-break: break-all;">${x.Instructions}</p>
+                      ${x.Instructions.split('\n').map(x => `<p style="max-width: 600px;word-break: break-all;">${x}</p>`).join('')}
                       </br>
                       <b>Debugging</b>
-                      <p style="max-width: 700px;word-break: break-all;">${x.Debugging}</p>
+                      ${x.Debugging.split('\n').map(x => `<p style="max-width: 600px;word-break: break-all;">${x}</p>`).join('')}
                       </br>
                      `;
 
@@ -100,8 +118,8 @@ export class DocsComponent implements OnInit {
         var imgData = canvas.toDataURL(
           'image/png');
 
-        var doc = new jspdf('p', 'mm');
-        doc.addImage(imgData, 'PNG', 10, 10);
+        var doc = new jspdf('p', 'mm', 'a4');
+        doc.addImage(imgData, 'PNG', 10, 10, 0, 290);
         doc.save(name);
       }
 

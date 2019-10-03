@@ -1,1 +1,0 @@
-{"OperatingSystem":"Windows Server 2016","Features":"IIS.\nMSMQ.\nMSDTC.","Cpu":"dual core 2.6ghz","Memory":"16gb","Disk":"250gb","Software":"Queue Explorer.\nNotepad++.\nSSMS.\n","Instructions":"Add Variables To Octopus.\nConnect Tentacle To Server.\nTest Deployment.","Debugging":"Check if domains are registered and certificate is valid."}

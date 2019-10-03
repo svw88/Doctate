@@ -9,6 +9,7 @@
     "productName": "Doctate",
     "copyright": "Copyright © 2019",
     "buildVersion": "1.0.0",
+    "author":  "Stephanus Johannes van Wyk",
     "compression": "maximum",
     "directories": {
       "output": "../../../bin/Desktop"
